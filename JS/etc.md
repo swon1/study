@@ -11,3 +11,10 @@
   let $time;
   ( $time >= 1 ) ? console.log('오후') : console.log('오전');
 ```
+
+<br><br>
+
+#### 📌 랜덤 숫자 추출
+```Javscript
+  number = Math.floor(Math.random() * 6) + 1;
+```
