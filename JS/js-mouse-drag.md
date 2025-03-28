@@ -2,7 +2,7 @@
 ### JS 마우스 드래그 관련 코드
 <br>
 
-#### 📌 마우스 좌우 클릭 드래그
+#### 📌 마우스 좌우 클릭 드래그 (모바일 해당X)
 ```HTML
 <div class="nav_inner mouseScroll"> <!-- 구조 -->
   <ul>
@@ -101,10 +101,15 @@
     eventFn();
   };
   
-  // 드래그 기능 중 클릭 방지 (마우스 엔터 방지)
-  if ( isDown == false ) {
-    console.log('드래그가 끝난 후');
-  }
+  let btn = document.quarySelectAll('.nav_inner button');
+  [].forEach.call( btn, ( el ) => {
+      el.addEventListener( 'click', (e) => {
+          // 드래그 기능 중 클릭 방지 (마우스 엔터 방지)
+          if ( isDown == false ) {
+            console.log('드래그가 끝난 후');
+          }
+      });
+  });
   
   // 단독일 경우
   const scrollEl = document.querySelector('.mouseScroll');
