@@ -1,12 +1,10 @@
 # 📋 JavaScript - Time
 
-### JS 시간 관련된 코드들
+### 🧷 JS 시간 관련된 코드들
 
 <br><br>
-#### 시간 추출 ( 년/월/일/시/분/초 )
+#### 📌 시간 추출 ( 년/월/일/시/분/초 )
 ```Javascript
-    // :: start Code ::
-
     let today = new Date();
 
     let year = today.getFullYear();
@@ -21,8 +19,6 @@
 
     // 2999-01-31-24-60-60
     let dateString = year + '-' + month  + '-' + day + '-' + hour + '-' + min + '-' + sec;
-
-    // :: end Code ::
 ```
 
 
