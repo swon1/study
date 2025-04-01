@@ -18,6 +18,9 @@
 #### 📌 SetTimeOut을 이용한 반복 코드 - [Code View](https://github.com/swon1/study/blob/main/JS/code-folder/js-setTimeOut-loop.md)
 <br>
 
+#### 📌 태그 내부 내용 복사 - [Code View](https://github.com/swon1/study/blob/main/JS/code-folder/js-inner-copy.md)
+<br>
+
 #### 📌 랜덤 숫자 추출
 ```Javascript
     let number = Math.floor(Math.random() * 100) + 1;
