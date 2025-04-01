@@ -1,6 +1,8 @@
 ### 📌 Javascript Toggle Class
 <br>
 
+▪ 'btn' 변수에 원하는 요소를 반영한다.
+
 ```HTML
 <script>
   const btn = document.querySelectorAll('element');
