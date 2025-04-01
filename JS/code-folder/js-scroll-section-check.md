@@ -1,5 +1,6 @@
 ### 📌 Javascript Scroll Section Check
 <br>
+
 ```HTML
 <script>
     // section - scroll - animated - js
