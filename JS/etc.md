@@ -13,28 +13,7 @@
 
 #### 📌 toggle (토글) 클래스 - [Code View](https://github.com/swon1/study/blob/main/JS/code-folder/js-toggle-class.md)
 
-#### 📌 SetTimeOut을 이용한 반복 코드
-```Javascript
-    let $initial = 0;
-    let $unit = a.querySelectorAll('element');
-    
-    const startFn = function ( e ) {
-        setTimeout( function () {
-            setFn( e );
-        }, 1500);
-    };
-    const setFn = function ( n ) {
-        let $unitL = $unit.length;
-        if ( n < ($unitL-1) ) {
-            n++;
-        } else if ( n == ($unitL-1) ) {
-            n = 0;
-        }
-        startFn( n );
-    };
-    setFn( $initial );
-```
-<br>
+#### 📌 SetTimeOut을 이용한 반복 코드 - [Code View](https://github.com/swon1/study/blob/main/JS/code-folder/js-setTimeOut-loop.md)
 
 #### 📌 랜덤 숫자 추출
 ##### ▪ 프로그래밍 숫자는 0 부터 시작하기때문에 1~N 수를 추출하려면 끝에 +1 을 더해준다.
