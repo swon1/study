@@ -1,4 +1,6 @@
 ## 📋 HTML 코드 및 팁
 <br>
 
-##### 📌 이미지에 들어간 설명이 너무 길때, 설명을 숨기고 싶을때는 ir(Image Replacement) 처리
+#### 📌 img 태그
+▪ `title : 이미지 설명 / alt : 이미지 정보` <br>
+▪ 이미지가 내포한 정보가 너무 길 경우 IR(Image Replacement) 처리
