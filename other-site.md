@@ -17,8 +17,7 @@
 #### 📌 [CSS Easing 차트 1](https://easings.net/ko)
 #### 📌 [CSS Easing 차트 2](https://matthewlein.com/tools/ceaser)
 
-#### 📌 [Animage.css](https://animate.style/)
-##### ▪ 애니메이션 CSS 라이브러리
+#### 📌 [Animage.css](https://animate.style/) - 애니메이션 CSS 라이브러리
 <br>
 
 #### 📌 [jQuery Easing 효과 모음](https://superkts.com/jquery/@easingEffects)
