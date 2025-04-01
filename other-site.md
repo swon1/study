@@ -2,9 +2,11 @@
 <br>
 
 #### 🧷 [MDN](https://developer.mozilla.org/ko/)
+#### 🧷 [TCP schoop](https://tcpschool.com/html/intro)
 <br>
 
-#### 🧷 [TCP schoop](https://tcpschool.com/html/intro)
+#### 🧷 [ZeroCho](https://www.zerocho.com/)
+##### ▪ 프론트 참고 및 공부 / 강의 다수
 <br>
 
 #### 🧷 [네이버 블로그](https://blog.naver.com/eirene100999)
