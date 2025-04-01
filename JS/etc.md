@@ -10,26 +10,8 @@
     let $time;
     ( $time >= 1 ) ? console.log('오후') : console.log('오전');
 ```
-<br>
 
-#### 📌 toggle (토글) 클래스
-```Javascript
-    const btn = document.querySelectorAll('element');
-    
-    function toggleClass ( element, className ) {
-        if ( element.classList.contains( className ) ) {
-            element.classList.remove( className );
-        } else {
-            element.classList.add( className );
-        };
-    }
-    [].forEach.call( btn, ( el ) => {
-        el.addEventListener( 'click', (e) => {
-            toggleClass( (e.target), 'check' );
-        });
-    });
-```
-<br>
+#### 📌 toggle (토글) 클래스 - [Code View](https://github.com/swon1/study/blob/main/JS/code-folder/js-toggle-class.md)
 
 #### 📌 SetTimeOut을 이용한 반복 코드
 ```Javascript
