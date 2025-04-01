@@ -5,38 +5,28 @@
 #### 🧷 [TCP schoop](https://tcpschool.com/html/intro)
 <br>
 
-#### 🧷 [ZeroCho](https://www.zerocho.com/)
-##### ▪ 프론트 참고 및 공부 / 강의 다수
-<br>
+#### 🧷 [ZeroCho](https://www.zerocho.com/) - 프론트 참고 및 공부 / 강의 다수
 
-#### 🧷 [네이버 블로그](https://blog.naver.com/eirene100999)
-##### ▪ 초중고급 관련 퍼블리셔 내용 다수
-<br>
+#### 🧷 [네이버 블로그](https://blog.naver.com/eirene100999) - 초중고급 관련 퍼블리셔 내용 다수
 
 #### 🧷 [naminsik lab](https://lab.naminsik.com/)
-<br>
 
-#### 🧷  [jeongah story](https://jeongah-story.tistory.com/)
-##### ▪ CSS 래퍼런스 및 JS 참고
+#### 🧷  [jeongah story](https://jeongah-story.tistory.com/) - CSS 래퍼런스 및 JS 참고
 <br>
 
 #### 📌 [CSS Easing 차트 1](https://easings.net/ko)
 #### 📌 [CSS Easing 차트 2](https://matthewlein.com/tools/ceaser)
-<br>
 
 #### 📌 [Animage.css](https://animate.style/)
 ##### ▪ 애니메이션 CSS 라이브러리
 <br>
 
 #### 📌 [jQuery Easing 효과 모음](https://superkts.com/jquery/@easingEffects)
-<br>
 
 #### 📌 [Swiper.js](https://swiperjs.com/)
 #### 📌 [Slick.js](https://kenwheeler.github.io/slick/)
-<br>
 
 #### 📌 [GSAP Easing](https://gsap.com/docs/v3/Eases/)
-<br>
 
 #### 📌 [Ball Pool 플러그인](https://mrdoob.com/projects/chromeexperiments/ball-pool/)
 <br>
