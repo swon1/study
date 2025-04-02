@@ -1,6 +1,7 @@
 ### 📌 Javascript Mouse PC Drag
 
 ##### 💡 [Code View](https://swon1.github.io/study/demo/js/js-mouse-drag.html)
+<br>
 
 ```HTML
 <div class="nav_inner mouseScroll"> <!-- 구조 -->
