@@ -101,7 +101,7 @@
     eventFn();
   };
   
-  let btn = document.quarySelectAll('.nav_inner button');
+  let btn = document.quarySelectorAll('.nav_inner button');
   [].forEach.call( btn, ( el ) => {
       el.addEventListener( 'click', (e) => {
           // 드래그 기능 중 클릭 방지 (마우스 엔터 방지)
