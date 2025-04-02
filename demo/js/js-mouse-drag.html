@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+
+    <title>📌 JS Mouse Drag</title>
+
+    <link rel="stylesheet" href="../reset.css" type="text/css">
+    <link rel="stylesheet" href="../style.css" type="text/css">
+
+</head>
+
+<body>
+    <style type="text/css">
+        .nav_inner {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:75%;height:30%;border:2px solid #333;overflow-x:scroll;}
+        .nav_inner::-webkit-scrollbar {display:none;}
+        .nav_inner ul {flex-direction:row;width:180%;height:100%;}
+        .nav_inner ul li {width:10%;}
+        .nav_inner ul li:nth-child(1) {background-color:red;}
+        .nav_inner ul li:nth-child(2) {background-color:orange;}
+        .nav_inner ul li:nth-child(3) {background-color:yellow;}
+        .nav_inner ul li:nth-child(4) {background-color:green;}
+        .nav_inner ul li:nth-child(5) {background-color:greenyellow;}
+        .nav_inner ul li:nth-child(6) {background-color:blue;}
+        .nav_inner ul li:nth-child(7) {background-color:aquamarine;}
+        .nav_inner ul li:nth-child(8) {background-color:darkblue;}
+        .nav_inner ul li:nth-child(9) {background-color:pink;}
+        .nav_inner ul li:nth-child(10) {background-color:purple;}
+        .nav_inner ul li .btn {position:absolute;top:0;left:0;width:100%;height:100%;font-size:0;color:transparent;overflow:0;cursor:pointer;}
+    </style>
+    <!-- wrap -->
+    <div id="wrap" class="relative-box flex-box wid100 ht100">
+        <header id="header" class="relative-box flex-box wid100">
+            <h1 class="flex-box ht100">DEMO</h1>
+            <h2>📌 Javascript Mouse PC Drag Scroll</h2>
+        </header>
+        <!-- con -->
+        <main id="main" class="relative-box wid100">
+            <section id="demo-section" class="wid100 ht100">
+                <article class="innerBox relative-box wid100 ht100">
+                    <div class="nav_inner mouseScroll"> <!-- 구조 -->
+                        <ul class="flex-box">
+                            <li class="relative-box ht100"><button type="button" class="btn" data-index="A">box01</button></li>
+                            <li class="relative-box ht100"><button type="button" class="btn" data-index="B">box02</button></li>
+                            <li class="relative-box ht100"><button type="button" class="btn" data-index="C">box03</button></li>
+                            <li class="relative-box ht100"><button type="button" class="btn" data-index="D">box04</button></li>
+                            <li class="relative-box ht100"><button type="button" class="btn" data-index="E">box05</button></li>
+                            <li class="relative-box ht100"><button type="button" class="btn" data-index="F">box06</button></li>
+                            <li class="relative-box ht100"><button type="button" class="btn" data-index="G">box07</button></li>
+                            <li class="relative-box ht100"><button type="button" class="btn" data-index="H">box08</button></li>
+                            <li class="relative-box ht100"><button type="button" class="btn" data-index="I">box09</button></li>
+                            <li class="relative-box ht100"><button type="button" class="btn" data-index="J">box10</button></li>
+                        </ul>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <!-- //con -->
+        <footer id="footer" class="relative-box flex-box wid100">
+            <p>Hwang SeungWon Study Page</p>
+        </footer>
+    </div>
+    <!-- //wrap -->
+    <script type="text/javascript">
+        (function(){
+            let isDown = false;
+            const mouseScroll = function ( ele ) {
+                const scrollTarget = ele;
+                let startX;
+                let scrollLeft;
+            
+                const scrollStartFn = function (e) {
+                    scrollTarget.classList.add('active');
+                    startX = e.pageX - scrollTarget.offsetLeft;
+                    scrollLeft = scrollTarget.scrollLeft;
+                    window.addEventListener('mousemove',scrollMoveFn);
+                    window.addEventListener('mouseup',scrollEndFn);
+                };
+                const scrollMoveFn = function (e) {
+                    isDown = true;
+                    const x = e.pageX - scrollTarget.offsetLeft;
+                    const walk = x - startX;
+                    scrollTarget.scrollLeft = scrollLeft - walk;
+                };
+                const scrollEndFn = function (e) {
+                    scrollTarget.classList.remove('active');
+
+                    window.removeEventListener('mousedown',scrollStartFn);
+                    window.removeEventListener('mousemove',scrollMoveFn);
+                    window.removeEventListener('mouseup',scrollEndFn);
+
+                    setTimeout(function(){
+                        isDown = false;
+                    },50);
+                };
+                const eventFn = function () {
+                    scrollTarget.addEventListener('mousedown',scrollStartFn);
+                };
+                eventFn();
+            };
+            
+            const multiScroll = function ( ele ) {
+                const scrollTarget = ele;
+                let startX;
+                let scrollLeft;
+                let moved;
+                let tarEl;
+            
+                const scrollStartFn = function (el,e) {
+                    el.classList.add('active');
+                    startX = e.pageX - el.offsetLeft;
+                    scrollLeft = el.scrollLeft;
+                    moved = true;
+                    window.addEventListener('mousemove', (e) => { scrollMoveFn(el,e) });
+                    window.addEventListener('mouseup', (e) => { scrollEndFn(el,e) });
+                };
+                const scrollMoveFn = function (el,e) {
+                    if ( !moved ) { return; }
+                    el = tarEl;
+                    isDown = true;
+                    const x = e.pageX - el.offsetLeft;
+                    const walk = x - startX;
+                    el.scrollLeft = scrollLeft - walk;
+                };
+                const scrollEndFn = function (el,e) {
+                    tarEl.classList.remove('active');
+
+                    window.removeEventListener('mousemove',scrollMoveFn);
+                    window.removeEventListener('mouseup',scrollEndFn);
+                    el.removeEventListener('mousedown',scrollStartFn);
+
+                    moved = false;
+
+                    setTimeout(function(){
+                        isDown = false;
+                    },50);
+                };
+                const eventFn = function () {
+                    [].forEach.call( scrollTarget, ( el ) => {
+                        el.addEventListener('mousedown', (e) => {
+                            tarEl = el;
+                            scrollStartFn(tarEl,e);
+                        });
+                    });
+                };
+                eventFn();
+            };
+            
+            let btn = document.querySelectorAll('.nav_inner .btn');
+            [].forEach.call( btn, ( el ) => {
+                el.addEventListener( 'click', (e) => {
+                    // 드래그 기능 중 클릭 방지 (마우스 엔터 방지)
+                    if ( isDown == false ) {
+                        let getDate = (e.target).getAttribute('data-index');
+                        alert(`${getDate} BOX`);
+                    }
+                });
+            });
+            
+            // 단독일 경우
+            const scrollEl = document.querySelector('.mouseScroll');
+            mouseScroll( scrollEl );
+            
+            // 여러개일 경우
+            const scrollmEl = document.querySelectorAll('.multiScroll');
+            multiScroll( scrollmEl );
+        })();
+    </script>
+</body>
+</html>
