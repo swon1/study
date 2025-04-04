@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+
+    <title>JS Scroll Section Check</title>
+
+    <link rel="stylesheet" href="../reset.css" type="text/css">
+    <link rel="stylesheet" href="../style.css" type="text/css">
+
+</head>
+
+<body>
+    <style type="text/css">
+        .section-box {font-size:28px;font-weight:900;justify-content:center;align-items:center;}
+        .section-a {height:150%;background-color:antiquewhite;}
+        .section-b {height:75%;background-color:darkgray;}
+        .section-c {height:110%;background-color:salmon;}
+        .section-d {height:90%;background-color:mintcream;}
+        .scroll-check-text {justify-content:center;align-items:center;position:fixed;bottom:10%;left:2.5%;transform:translateY(-50%);}
+    </style>
+    <!-- wrap -->
+    <div id="wrap" class="relative-box flex-box wid100 ht100">
+        <header id="header" class="relative-box flex-box wid100">
+            <h1 class="flex-box ht100">DEMO</h1>
+            <h2>📌Javascript Scroll Section Check</h2>
+        </header>
+        <!-- con -->
+        <main id="main" class="relative-box wid100">
+            <section id="demo-section" class="wid100 ht100">
+                <article id="scroll-active-box" class="innerBox relative-box wid100 ht100">
+                    <div class="section-box section-a relative-box wid100 flex-box" data-section="A">SECTION - A</div>
+                    <div class="section-box section-b relative-box wid100 flex-box" data-section="B">SECTION - B</div>
+                    <div class="section-box section-c relative-box wid100 flex-box" data-section="C">SECTION - C</div>
+                    <div class="section-box section-d relative-box wid100 flex-box" data-section="D">SECTION - D</div>
+                </article>
+                <aside class="scroll-check-text flex-box">
+                    <p></p>
+                </aside>
+            </section>
+        </main>
+        <!-- //con -->
+        <footer id="footer" class="relative-box flex-box wid100">
+            <p>Hwang SeungWon Study Page</p>
+        </footer>
+    </div>
+    <!-- //wrap -->
+    <script type="text/javascript">
+        (function(a){
+            let scrollActiveBox = a.querySelector('#scroll-active-box');
+            scrollActiveBox.addEventListener('scroll',function(e){
+                let $scrollArea = a.querySelectorAll('.section-box');
+                
+                for ( i=0; i<$scrollArea.length; i++ ) {
+                    let $el = $scrollArea[i];
+                    let $elTop = $el.getBoundingClientRect().top;
+                    let $elClass = $el.classList.contains('active');
+
+                    // if ( $elTop <= (window.innerHeight) || $elClass ) { $el.classList.add('active'); }
+
+                    // 예시라서 추가
+                    let $dataScroll;
+                    
+                    if ( $elTop <= (window.innerHeight) || $elClass ) {
+                        $dataScroll = $el.getAttribute('data-section');
+                        a.querySelector('.scroll-check-text p').innerHTML = `View Section - SECTION-${$dataScroll}`;
+                    }
+                }
+            });
+        })(document);
+    </script>
+</body>
+</html>
