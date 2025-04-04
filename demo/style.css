@@ -59,7 +59,7 @@ body .ht100 {
   flex-grow: 1;
 }
 #wrap #main #demo-section .innerBox {
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 /*# sourceMappingURL=style.css.map */
