@@ -28,7 +28,7 @@
 ##### ▪ 프로그래밍 숫자는 0 부터 시작하기때문에 1~N 수를 추출하려면 끝에 +1 을 더해준다.
 <br>
 
-#### 📌 랜덤 숫자 반복적으로 추출 중 같은 숫자 방지 - [Code View](https://github.com/swon1/study/blob/master/JS/code-folder/js-random-no-same.md)
+#### 📌 랜덤 숫자 반복적으로 추출 중 같은 숫자 방지 - [Code View](https://github.com/swon1/study/blob/master/JS/code-folder/js-random-no-same.md) - [Demo View](https://swon1.github.io/study/demo/js/js-random-number.html)
 
 
 
