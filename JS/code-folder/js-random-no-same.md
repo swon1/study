@@ -1,4 +1,6 @@
 ### 📌 Javascript Random No Same Number
+
+##### 💡 [Demo View](https://swon1.github.io/study/demo/js/js-random-number.html)
 <br>
 
 ```HTML
