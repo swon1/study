@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+
+    <title>JS Random Number</title>
+
+    <link rel="stylesheet" href="../reset.css" type="text/css">
+    <link rel="stylesheet" href="../style.css" type="text/css">
+
+</head>
+
+<body>
+    <style type="text/css">
+        .numberBox {display:block;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:80%;height:80%;max-width:800px;min-height:400px;}
+        .numberBox p {display:block;padding-top:100px;font-weight:900;letter-spacing:20px;line-height:5;text-align:left;}
+        .numberBox button {display:block;font-size:10px;font-weight:bold;color:#fff;position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:30px;background:#333;}
+    </style>
+    <!-- wrap -->
+    <div id="wrap" class="relative-box flex-box wid100 ht100">
+        <header id="header" class="relative-box flex-box wid100">
+            <h1 class="flex-box ht100">DEMO</h1>
+            <h2>📌 Javascript Random Number</h2>
+        </header>
+        <!-- con -->
+        <main id="main" class="relative-box wid100">
+            <section id="demo-section" class="wid100 ht100">
+                <article class="innerBox relative-box wid100 ht100">
+                    <div class="numberBox">
+                        <p class="wid100"></p>
+                        <button type="button">Random Number</button>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <!-- //con -->
+        <footer id="footer" class="relative-box flex-box wid100">
+            <p>Hwang SeungWon Study Page</p>
+        </footer>
+    </div>
+    <!-- //wrap -->
+    <script type="text/javascript">
+        (function(a){
+            const randomNB = () => {
+                let textBox = document.querySelector('.numberBox p');
+                let btn = document.querySelector('.numberBox button');
+                let beNum;
+
+                const numberSet = () => {
+                    let $randomNum = Math.floor(Math.random() * 9) + 1;
+
+                    while ( beNum == $randomNum ) {
+                        $randomNum = Math.floor(Math.random() * 9) + 1;
+                    }
+
+                    textBox.innerHTML += $randomNum;
+                    beNum = $randomNum;
+                };
+
+                btn.addEventListener( 'click', (e) => {
+                    numberSet();
+                });
+            };
+            randomNB();
+        })(document);
+    </script>
+</body>
+</html>
