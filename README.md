@@ -1,6 +1,6 @@
 ## 🖥 퍼블리싱 공부 및 기록
 
-##### 유용한 코드 및 팁
+##### 유용한 코드/팁
 <br>
 
 #### 📋 HTML - [View](https://github.com/swon1/study/blob/master/HTML/etc.md)
