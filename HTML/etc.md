@@ -9,6 +9,11 @@
 <img src="images.jpg" loading="lazy"> <!-- "auto", "eager", "lazy" -->
 ```
 
+#### 📌 video 태그 속성
+```HTML
+<video src="video.mp4" poster="image.png" controls muted autoplay playsinline loop preload="auto"></video>
+```
+
 #### 📌 기본 URL 주소 세팅하기
 ```HTML
 <head>
