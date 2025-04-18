@@ -1,6 +1,13 @@
 # 📋 JavaScript 코드 및 팁
 <br>
 
+#### 📌 단순 true 조건의 if 문을 사용할때는 && 연산자를 통해 간결하게 작성 가능
+```Javascript
+    if ( $active ) { console.log('GO'); }
+    
+    $active && console.log('GO');
+```
+
 #### 📌 삼항연산자
 ```Javascript
     // $time 변수가 1 일경우 오후, 0 일경우 오전
