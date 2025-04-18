@@ -23,7 +23,6 @@
     ( $time >= 1 ) ? console.log('오후') : console.log('오전');
 ```
 ##### ▪ ( 조건 ) ? 참일경우 반환값 : 거짓일경우 반환값<br>
-반환값에는 수식,함수 등 여러 가지 형태의 명령문이 올 수 있다.
 <br>
 
 #### 📌 toggle (토글) 클래스 - [Code View](https://github.com/swon1/study/blob/master/JS/code-folder/js-toggle-class.md)
