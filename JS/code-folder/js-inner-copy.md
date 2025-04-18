@@ -1,6 +1,8 @@
 ### 📌 Javascript InnerHTML Copy
 <br>
 
+##### ▪ clipboard를 사용한 코드로 localhost / https 환경에서만 사용 가능
+
 ```HTML
 <div class="con-copy">
     <!-- 코드 복사 영역 -->
