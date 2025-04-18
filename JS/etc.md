@@ -1,6 +1,13 @@
 # 📋 JavaScript 코드 및 팁
 <br>
 
+#### 📌 배열 내 같은 요소 제거 - set
+```Javascript
+    const names = ['kim', 'Lee', 'Park', 'Lee', 'Kim'];
+    const uniqueNamesWithArrayFrom = Array.from(new Set(names));
+    const uniqueNamesWithSpread = [...new Set(names)];
+```
+
 #### 📌 단순 true 조건의 if 문을 사용할때는 && 연산자를 통해 간결하게 작성 가능
 ```Javascript
     if ( $active ) { console.log('GO'); }
