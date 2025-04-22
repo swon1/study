@@ -1,4 +1,4 @@
-# 📋 JavaScript - Scroll
+## 📋 JavaScript - Scroll
 ### 🧷 JS 스크롤 관련된 코드
 <br>
 
