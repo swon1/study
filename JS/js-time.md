@@ -1,4 +1,4 @@
-# 📋 JavaScript - Time
+## 📋 JavaScript - Time
 
 ### 🧷 JS 시간 관련된 코드들
 
