@@ -1,4 +1,4 @@
-# 📋 Javscript - Drag
+## 📋 Javscript - Drag
 ### 🧷 JS 마우스 드래그 관련 코드
 <br>
 
