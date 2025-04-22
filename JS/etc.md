@@ -1,4 +1,4 @@
-# 📋 JavaScript 코드 및 팁
+## 📋 JavaScript 코드 및 팁
 <br>
 
 #### 📌 배열 내 같은 요소 제거 - set
