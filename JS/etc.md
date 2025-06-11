@@ -28,7 +28,9 @@
 ```
 <br>
 
-#### 📌 toggle (토글) 클래스 - [Code View](https://github.com/swon1/study/blob/master/JS/code-folder/js-toggle-class.md)
+#### 📌 toggle 토글 클래스 - [Code View](https://github.com/swon1/study/blob/master/JS/code-folder/js-toggle-class.md)
+
+#### 📌 toggle Slide 토글 슬라이드 - [Code View] - [Demo View](https://swon1.github.io/study/demo/js/js-toggle-slide.html)
 
 #### 📌 SetTimeOut을 이용한 반복 코드 - [Code View](https://github.com/swon1/study/blob/master/JS/code-folder/js-setTimeOut-loop.md)
 
