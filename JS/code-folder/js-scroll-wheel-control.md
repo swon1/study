@@ -1,6 +1,6 @@
 ### 📌 Javascript Scroll Wheel Control
 
-#### 💡[Demo View](https://swon1.github.io/study/demo/js/js-scroll-wheel.html)
+##### 💡 [Demo View](https://swon1.github.io/study/demo/js/js-scroll-wheel.html)
 <br>
 
 ```HTML
