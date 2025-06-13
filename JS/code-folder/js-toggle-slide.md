@@ -20,7 +20,12 @@
 ```HTML
 <script type="text/javascript">
     (function(a){
+        let isAnimating = false;
+
         let slideUp = (target, duration=500) => {
+            if (isAnimating) return;
+            isAnimating = true;
+
             target.style.transitionProperty = 'height, margin, padding';
             target.style.transitionDuration = duration + 'ms';
             target.style.boxSizing = 'border-box';
@@ -42,9 +47,13 @@
                 target.style.removeProperty('overflow');
                 target.style.removeProperty('transition-duration');
                 target.style.removeProperty('transition-property');
+                isAnimating = false;
             }, duration);
         }
         let slideDown = (target, duration=500) => {
+            if (isAnimating) return;
+            isAnimating = true;
+
             target.style.removeProperty('display');
             let display = window.getComputedStyle(target).display;
 
@@ -68,14 +77,18 @@
             target.style.removeProperty('padding-bottom');
             target.style.removeProperty('margin-top');
             target.style.removeProperty('margin-bottom');
+
             window.setTimeout( () => {
-            target.style.removeProperty('height');
-            target.style.removeProperty('overflow');
-            target.style.removeProperty('transition-duration');
-            target.style.removeProperty('transition-property');
+                target.style.removeProperty('height');
+                target.style.removeProperty('overflow');
+                target.style.removeProperty('transition-duration');
+                target.style.removeProperty('transition-property');
+                isAnimating = false;
             }, duration);
         }
         let slideToggle = (target, duration = 500) => {
+            if (isAnimating) return;
+
             if (window.getComputedStyle(target).display === 'none') {
                 return slideDown(target, duration);
             } else {
@@ -87,7 +100,9 @@
         let targetId = document.getElementById("target");
 
         let slideBtnClick = (cl, sl) => 
-        document.querySelector(cl).addEventListener('click', () => sl(targetId, speedAnimation));
+        document.querySelector(cl).addEventListener('click', () => {
+            sl(targetId, speedAnimation)
+        });
 
         slideBtnClick('.triggerToggle', slideToggle);
     })(document);
