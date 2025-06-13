@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+
+    <title>JS SCROLL WHEEL</title>
+
+    <link rel="stylesheet" href="../reset.css" type="text/css">
+    <link rel="stylesheet" href="../style.css" type="text/css">
+
+</head>
+
+<body>
+    <style type="text/css">
+        .scrollWheelBox {position:relative;width:80%;height:65vh;border:1px solid rgba(0,0,0,0.33);margin:100px auto 0;overflow:hidden;}
+        .scrollWheelBox .boxUnit {display:flex;flex-wrap:wrap;flex-direction:row;justify-content:center;align-items:center;position:absolute;top:80%;left:0;width:100%;height:100%;transition:0.75s cubic-bezier(0.83, 0, 0.17, 1)}
+        .scrollWheelBox .boxUnit.unitA {background-color:crimson;top:0;}
+        .scrollWheelBox .boxUnit.unitB {background-color:darkgrey;}
+        .scrollWheelBox .boxUnit.unitC {background-color:deepskyblue;}
+        .scrollWheelBox .boxUnit.unitD {background-color:lightgreen;}
+        .scrollWheelBox .boxUnit p {font-size:20px;font-weight:bold;color:#fff;text-shadow:0px 0px 10px rgba(0,0,0,0.5);}
+    </style>
+    <!-- wrap -->
+    <div id="wrap" class="relative-box flex-box wid100 ht100">
+        <header id="header" class="relative-box flex-box wid100">
+            <h1 class="flex-box ht100">DEMO</h1>
+            <h2>📌Javascript Scroll Wheel Control</h2>
+        </header>
+        <!-- con -->
+        <main id="main" class="relative-box wid100">
+            <section id="demo-section" class="wid100 ht100">
+                <article class="innerBox relative-box">
+                    <div class="scrollWheelBox">
+                        <div class="boxUnit unitA"><p>BOX A</p></div>
+                        <div class="boxUnit unitB"><p>BOX B</p></div>
+                        <div class="boxUnit unitC"><p>BOX C</p></div>
+                        <div class="boxUnit unitD"><p>BOX D</p></div>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <!-- //con -->
+        <footer id="footer" class="relative-box flex-box wid100">
+            <p>Hwang SeungWon Study Page</p>
+        </footer>
+    </div>
+    <!-- //wrap -->
+    <script type="text/javascript">
+        (function(a){
+            const scrollWheelFn = () => {
+                let box = a.querySelectorAll('.scrollWheelBox .boxUnit');
+                let total = box.length -1;
+                let idx = 0;
+                let motion;
+
+                box[0].style.top = '0%';
+
+                let zidx = total+1;
+                for ( i = 0; i < total; i++ ) {
+                    box[i].style.zIndex = zidx;
+                    zidx--;
+                }
+
+                function pageUp () {
+                    let preidx = idx;
+                    if ( idx <= 0 ) {
+                        motion = false;
+                        ldx = 0;
+                        return;
+                    } else {
+                        setTimeout( () => {
+                            motion = false;
+                        }, 900 );
+                        idx--;
+                    }
+                    box[preidx].style.top = '80%';
+                    box[idx].style.top = '0%';
+                }
+                function pageDown () {
+                    let preidx = idx;
+                    if ( idx >= total ) {
+                        motion = false;
+                        idx = total;
+                        return;
+                    } else {
+                        setTimeout( () => {
+                            motion = false;
+                        }, 900 );
+                        idx++;
+                    }
+                    box[preidx].style.top = '100%';
+                    box[idx].style.top = '0%';
+                }
+
+                // mouse Wheel Event
+                function wheelFn () {
+                    [].forEach.call( box, ( el ) => {
+                        el.addEventListener('wheel', ( event ) => {
+                            event.preventDefault();
+                            let wCheck = event.wheelDelta;
+
+                            if ( !(motion) ) {
+                                motion = true;
+                                if ( wCheck > 0 ) {
+                                    pageUp();
+                                } else {
+                                    pageDown();
+                                }
+                            } else {
+                                return;
+                            }
+                        }, { passive : false });
+                    });
+                }
+                function touchFn () {
+                    let boxH = box[0].clientHeight;
+
+                    let $touchStart, $touchMove, $touchEnd;
+                    let $touchCheck;
+
+                    [].forEach.call( box, ( el ) => {
+                        el.addEventListener('touchstart', ( evt ) => {
+                            evt.preventDefault();
+                            $touchCheck = false;
+                            $touchStart = evt.touches[0].pageY;
+                        });
+
+                        // ■ touchMove :: 터치 상하 이동 감지 후 동작
+                        el.addEventListener('touchmove', ( evt ) => {
+                            evt.preventDefault();
+
+                            $touchMove = evt.touches[0].clientY;
+
+                            if ( !(motion) ) {
+                                if ( !$touchCheck ) {
+                                    if ( $touchMove < ($touchStart - (boxH / 4)) ) {
+                                        motion = true;
+                                        $touchCheck = true;
+                                        pageDown();
+                                    } else if ( $touchMove > ($touchStart + (boxH / 4))) {
+                                        motion = true;
+                                        $touchCheck = true;
+                                        pageUp();
+                                    }
+                                } else {
+                                    return;
+                                }
+                            } else {
+                                return;
+                            }                        
+                        },{ passive : false });
+
+                        // ■ touchEnd :: 터치가 끝났을때 동작
+                        // el.addEventListener('touchend', ( evt ) => {
+                        //     evt.preventDefault();
+                        //     $touchEnd = evt.changedTouches[0].pageY;
+
+                        //     if ( !(motion) ) {
+                        //         motion = true;
+                        //         if ( $touchStart > $touchEnd ) {
+                        //             pageDown();
+                        //         } else {
+                        //             pageUp();
+                        //         }
+                        //     } else {
+                        //         return;
+                        //     }
+                        // },{ passive : false });
+                    });
+                }
+                wheelFn();
+                touchFn();
+            }
+            scrollWheelFn();
+        })(document);
+    </script>
+</body>
+</html>
