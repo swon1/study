@@ -11,13 +11,18 @@
 
 #### 🧷 [naminsik lab](https://lab.naminsik.com/)
 
-#### 🧷  [jeongah story](https://jeongah-story.tistory.com/) - CSS 래퍼런스 및 JS 참고
+#### 🧷 [jeongah story](https://jeongah-story.tistory.com/) - CSS 래퍼런스 및 JS 참고
+
+#### 🧷 [웹스토리보이](https://wsss.tistory.com/) - 다양한 예제 참고
 <br>
 
 #### 📌 [CSS Easing 차트 1](https://easings.net/ko)
 #### 📌 [CSS Easing 차트 2](https://matthewlein.com/tools/ceaser)
 
 #### 📌 [Animage.css](https://animate.style/) - 애니메이션 CSS 라이브러리
+
+#### 📌 [Animista](https://animista.net/) - animate 예제
+
 <br>
 
 #### 📌 [jQuery Easing 효과 모음](https://superkts.com/jquery/@easingEffects)
